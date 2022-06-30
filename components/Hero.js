@@ -12,7 +12,7 @@ function Hero() {
         
 
     
-        <img className = "rounded-full  w-1/5 h-1/5" src="profil.jpg" />
+        <img className = "invisible rounded-full  w-1/5 h-1/5 md:visible" src="profil.jpg" />
     
         
 

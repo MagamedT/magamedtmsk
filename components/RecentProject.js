@@ -5,7 +5,7 @@ function RecentProject() {
     <div className="px-4 mt-20">
         <h1 className="text-white font-black text-4xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Recent Projects</h1>
 
-        <div className="flex flex-row justify-center">
+        <div className="flex flex-col items-center md:flex-row justify-center">
             <Card  texte ={"3D Fractal Visualization"} link = "/"/>
             <Card  texte ={"Emotion Recognition"} link = "/"/>
             <Card  texte ={"NFT Minting"} link = "/"/>

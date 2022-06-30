@@ -9,7 +9,7 @@ export default function RecentPost({posts}) {
     <div className="px-4 mt-20">
         <h1 className="text-white font-black text-4xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Recently publised</h1>
 
-        <div className="flex flex-row justify-center">
+        <div className="flex flex-col items-center md:flex-row justify-center">
           
             <Card texte ={posts[0].frontMatter.title} link = {'/blog/'+ posts[0].slug}/>
         
