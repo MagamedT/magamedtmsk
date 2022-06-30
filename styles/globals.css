@@ -3,14 +3,22 @@
 @tailwind utilities;
 
 
+
+
+
+*::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+
 @layer base {
     * {
         font-family: 'Roboto', sans-serif;
         @apply bg-[#111111];
+        
     }
-
+    
 }
-
 
 @layer components {
 

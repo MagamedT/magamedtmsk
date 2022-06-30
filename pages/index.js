@@ -8,8 +8,14 @@ import Footer from '../components/Footer'
 import Information from '../components/Information'
 import RecentProject from '../components/RecentProject'
 
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
-const Home = () => {
+
+
+const Home = ({ posts }) => {
+  
   return (
     <div className="flex flex-col max-w-3xl mx-auto bg-[#111111] h-screen">
       <Head>
@@ -21,8 +27,9 @@ const Home = () => {
       <Header />
       
       <main className="grow">
+
           <Hero />
-          <RecentPost />
+          <RecentPost posts = {posts}/>
           <RecentProject />
           
       </main>
@@ -31,5 +38,31 @@ const Home = () => {
     </div>
   )
 }
+
+
+export const getStaticProps = async () => {
+
+  const files = fs.readdirSync(path.join('posts'))
+
+  const posts = files.map(filename => {
+    const mdxWithMeta = fs.readFileSync(path.join('posts',filename),'utf-8')
+
+    const { data: frontMatter} = matter(mdxWithMeta)
+
+    return {
+      frontMatter,
+      slug: filename.split('.')[0]
+    }
+    
+  })
+  
+  return {
+    props: {
+      posts
+    }
+  }
+
+}
+
 
 export default Home

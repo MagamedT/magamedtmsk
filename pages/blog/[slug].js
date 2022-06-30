@@ -8,6 +8,8 @@ import { MDXRemote } from 'next-mdx-remote'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import rehypeMathjax  from 'rehype-mathjax'
+import remarkMath from 'remark-math'
 
 
 
@@ -15,22 +17,23 @@ const components = {}
     
 export default function Post ({ frontMatter, mdxSource }) {
     return (
-        <div className="flex flex-col max-w-3xl mx-auto bg-[#111111] h-screen">
+        <div className="flex flex-col max-w-3xl mx-auto bg-[#111111] h-screen" suppressHydrationWarning>
 
         <Head>
             <title>{frontMatter.title}</title>
             <link rel="icon" href="/favicon.ico" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossOrigin="anonymous"></link>
             <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" /> 
         </Head>
 
         <Header />
 
-        <main className="mx-4 mt-12 grow">
+        <main className="mx-4 mt-12 grow" suppressHydrationWarning>
             <h1 className="mb-2 text-white text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">{frontMatter.title}</h1>
             <h3 className="text-white text-base font-medium mb-20">{frontMatter.date}</h3>
 
-            <div className="text-white font-base">
-                <MDXRemote {...mdxSource} components = {MDXComponents}/>
+            <div className="text-white font-base" suppressHydrationWarning>
+                <MDXRemote {...mdxSource} components = {MDXComponents} suppressHydrationWarning/>
             </div>
                      
         </main>
@@ -63,11 +66,23 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({params: { slug }}) => {
 
+
     const mdxWithMeta = fs.readFileSync(path.join('posts',slug+'.mdx'),'utf-8')
 
     const {data: frontMatter, content} = matter(mdxWithMeta)
 
-    const mdxSource = await serialize(content)
+    const mdxSource = await serialize(content, {
+        
+        scope: {},
+       
+        mdxOptions: {
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeMathjax],
+          format: 'mdx'
+        },
+        
+        parseFrontmatter: false
+      })
     
 
     return {

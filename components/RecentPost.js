@@ -1,19 +1,36 @@
-import Cards from './Cards'
+import Card from './Cards'
+import Link from 'next/link'
 
-function RecentPost() {
+
+
+export default function RecentPost({posts}) {
+  
   return (
     <div className="px-4 mt-20">
         <h1 className="text-white font-black text-4xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Recently publised</h1>
 
         <div className="flex flex-row justify-center">
-            <Cards texte ={"Why using more flashy data visualisation for business"}/>
-            <Cards texte ={"An introduction to Measured Probabilty Theory"}/>
-            <Cards texte ={"Crypto and Data"}/>
+          
+            <Card texte ={posts[0].frontMatter.title} link = {'/blog/'+ posts[0].slug}/>
+        
+            <Card texte ={posts[1].frontMatter.title} link = {'/blog/'+ posts[1].slug}/>
+          
+            <Card texte ={posts[2].frontMatter.title} link = {'/blog/'+ posts[2].slug}/>
+          
         </div>
 
-        <h3 className="mt-4 w-32 text-[#807e80] font-medium hover:text-white transition-all duration-200 cursor-pointer">Read all posts →</h3>
+        <Link href={"/Blog"}>
+          <h3 className="mt-4 w-32 text-[#807e80] font-medium hover:text-white transition-all duration-200 cursor-pointer">Read all posts →</h3>
+        </Link>
     </div>
   )
 }
 
-export default RecentPost
+
+
+
+
+
+
+
+
