@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    * {
+        font-family: 'Roboto', sans-serif;
+        @apply bg-[#111111];
+    }
+
+}
+
+
+@layer components {
+
+    .menu-item {
+        @apply px-4 py-1 hover:bg-[#222222] hover:rounded-lg transition-all duration-200 cursor-pointer;
+    }
+}
+
+@layer components {
+
+    .menu-footer {
+        @apply py-1 font-light hover:text-[#222222] transition-all duration-200 cursor-pointer;
+    }
+}
+
+
