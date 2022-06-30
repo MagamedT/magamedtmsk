@@ -12,7 +12,7 @@ function Header() {
         </div>
 
         <div className="px-4 py-1 hover:bg-[#222222] hover:rounded-lg transition-all duration-200 cursor-pointer">
-            Button
+            News
         </div>
 
 

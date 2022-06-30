@@ -14,7 +14,13 @@ function Contact() {
         </Head>
         <Header />
         <main className="mx-4 mt-12 grow">    
-            <h1 className="text-white text-4xl font-black mb-1 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Contact</h1>    
+            <h1 className="text-white text-4xl font-black mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Contact</h1>
+
+            <div className="text-white">
+              <h3><span className="font-medium">● E-mail:</span> <a href = "mailto:magamed.taimeskhanov@etu.univ-cotedazur.fr">magamed.taimeskhanov@etu.univ-cotedazur.fr</a></h3>
+              
+            </div>
+                
         </main>
         <Footer />
     </div>
