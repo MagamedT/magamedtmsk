@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 function Header() {
   return (
-    <div className="flex justify-between  items-center text-[#807e80] font-medium mt-12">
+    <header className="flex justify-between  items-center text-[#807e80] font-medium mt-12">
         <div>
             <ul className="flex items-center">
                 <Link href = "/"><li className="menu-item">Home</li></Link>
@@ -16,7 +16,7 @@ function Header() {
         </div>
 
 
-    </div>
+    </header>
   )
 }
 
