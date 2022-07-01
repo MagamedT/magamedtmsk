@@ -19,7 +19,7 @@ export default function Blog( { posts }) {
         </Head>
         <Header />
         <main className="mx-4 mt-12 grow">
-          <h1 className="mb-10 text-white text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Blog</h1>
+          <h1 className="mb-10 text-white text-4xl font-black"><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Blog</span> 📖</h1>
           {posts.map((post, index) => (
             <Link href = {'/blog/' + post.slug}  passHref  key={index}>
 

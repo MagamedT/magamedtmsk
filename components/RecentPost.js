@@ -7,7 +7,7 @@ export default function RecentPost({posts}) {
   
   return (
     <div className="px-4 mt-20">
-        <h1 className="text-white font-black text-4xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Recently publised</h1>
+        <h1 className="text-white font-black text-4xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Recently publised</span></h1>
 
         <div className="flex flex-col items-center md:flex-row justify-center">
           
