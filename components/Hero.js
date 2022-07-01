@@ -1,5 +1,5 @@
-
-
+import Image from 'next/image'
+import profilePic from '../public/profil.jpg'
 
 function Hero() {
   return (
@@ -12,8 +12,14 @@ function Hero() {
         
 
     
-        <img className = "invisible rounded-full  w-1/5 h-1/5 md:visible" src="profil.jpg" />
-    
+        
+        <Image
+         className="invisible rounded-full md:visible object-contain"
+         src={profilePic}
+         alt="Picture of the author"
+         width={300}
+         height={200}
+         />
         
 
     </div>
@@ -22,3 +28,6 @@ function Hero() {
 }
 
 export default Hero
+
+
+/**<img className = "invisible rounded-full  w-1/5 h-1/5 md:visible" src="profil.jpg" /> */
