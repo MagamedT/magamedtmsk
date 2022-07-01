@@ -13,6 +13,8 @@ import remarkMath from 'remark-math'
 
 
 
+
+
 const components = {}
     
 export default function Post ({ frontMatter, mdxSource }) {
@@ -31,7 +33,7 @@ export default function Post ({ frontMatter, mdxSource }) {
             <h1 className="mb-2 text-white text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">{frontMatter.title}</h1>
             <h3 className="text-white text-base font-medium mb-20">{frontMatter.date}</h3>
 
-            <div className="text-white font-base" suppressHydrationWarning>
+            <div className="prose text-gray-300" suppressHydrationWarning>
                 <MDXRemote {...mdxSource} components = {MDXComponents} suppressHydrationWarning/>
             </div>
                      
