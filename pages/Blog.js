@@ -6,6 +6,7 @@ import fs from 'fs'
 import * as path  from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
+import Article from '../components/Article'
 
 export default function Blog( { posts }) {
   return (
@@ -23,7 +24,7 @@ export default function Blog( { posts }) {
             <Link href = {'/blog/' + post.slug}  passHref  key={index}>
 
               <div className="my-2 hover:scale-105 transition-all duration-300 cursor-pointer">
-                 <p className="text-white font-medium">● {post.frontMatter.title}, <span className="text-[#807e80] font-light">{post.frontMatter.date}</span></p>
+                 <Article post = {post}/>
               </div>
 
             </Link>
@@ -33,6 +34,11 @@ export default function Blog( { posts }) {
     </div>
   )
 }
+
+/**<p className="text-white font-medium">● {post.frontMatter.title}, <span className="text-[#807e80] font-light">{post.frontMatter.date}</span></p>
+ * 
+ * hover:scale-105 transition-all duration-300
+ */
 
 
 export const getStaticProps = async () => {

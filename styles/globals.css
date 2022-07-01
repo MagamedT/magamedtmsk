@@ -13,9 +13,10 @@
 
 @layer base {
     * {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto', sans-serif; 
+    }
+    html {
         @apply bg-[#111111];
-        
     }
     
 }
