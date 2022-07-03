@@ -19,7 +19,7 @@ import {
 import { AiOutlineSearch } from 'react-icons/ai';
 
 
-export default function blog( { posts }) {
+export default function Blog( { posts }) {
   const [searchValue, setSearchValue] = useState('')
   const filteredPosts = posts.sort(
     (a, b) => Number(new Date(b.frontMatter.date)) - Number(new Date(a.frontMatter.date))

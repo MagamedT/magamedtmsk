@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 
-function contact() {
+function Contact() {
   return (
     <div className="flex flex-col max-w-3xl mx-auto bg-[#111111] h-screen">
         <Head>
@@ -27,4 +27,4 @@ function contact() {
   )
 }
 
-export default contact
+export default Contact
