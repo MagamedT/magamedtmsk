@@ -48,8 +48,8 @@ export default function Tags({ posts }) {
 
               <div className="flex mb-4">
                 {tagsSet.map(
-                    tag => (
-                      <button onClick = {() => setSearchTag(tag)} className="text-white m-1 p-2 flex flex-col border-solid border-2 border-[#9234ea] rounded-lg shadow-xl hover:shadow-[#9234ea] hover:shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer bg-[#111111]">
+                    (tag, index) => (
+                      <button onClick = {() => setSearchTag(tag)} key = {index} className="text-white m-1 p-2 flex flex-col border-solid border-2 border-[#9234ea] rounded-lg shadow-xl hover:shadow-[#9234ea] hover:shadow-sm hover:scale-105 transition-all duration-300 cursor-pointer bg-[#111111]">
                         {tag}  
                       </button>
                     )
