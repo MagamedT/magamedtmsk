@@ -50,11 +50,11 @@ export default function Blog( { posts }) {
             </InputRightElement>
           </InputGroup>
           
-          {!filteredPosts.length && <span className= "text-white font-bold text-xl">No corresponding posts found ...</span>}
+          {!filteredPosts.length && <span className= "text-white font-semibold text-xl">No corresponding posts found ...</span>}
           {filteredPosts.map((post, index) => (
             <Link href = {'/blog/' + post.slug}  passHref  key={index}>
 
-              <div className="my-2 hover:scale-105 transition-all duration-300 cursor-pointer">
+              <div className="my-4 hover:scale-105 transition-all duration-300 cursor-pointer">
                  <Article post = {post}/>
               </div>
 
