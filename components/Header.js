@@ -6,8 +6,8 @@ function Header() {
         <div>
             <ul className="flex items-center">
                 <Link href = "/"><li className="menu-item">Home</li></Link>
-                <Link href = "/Blog"><li className="menu-item">Blog</li></Link>
-                <Link href = "/Contact"><li className="menu-item">Contact</li></Link>
+                <Link href = "/blog"><li className="menu-item">Blog</li></Link>
+                <Link href = "/contact"><li className="menu-item">Contact</li></Link>
             </ul>
         </div>
 

@@ -19,7 +19,7 @@ export default function RecentPost({posts}) {
           
         </div>
 
-        <Link href={"/Blog"}>
+        <Link href={"/blog"}>
           <h3 className="mt-4 w-32 text-[#807e80] font-medium hover:text-white transition-all duration-200 cursor-pointer">Read all posts →</h3>
         </Link>
     </div>

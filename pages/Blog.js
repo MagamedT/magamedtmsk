@@ -1,3 +1,5 @@
+import React, { useState } from 'react'
+
 import Head from 'next/head'
 
 import Footer from '../components/Footer'
@@ -8,7 +10,22 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import Article from '../components/Article'
 
-export default function Blog( { posts }) {
+
+import {
+  Input,
+  InputGroup,
+  InputRightElement
+} from '@chakra-ui/react'
+import { AiOutlineSearch } from 'react-icons/ai';
+
+
+export default function blog( { posts }) {
+  const [searchValue, setSearchValue] = useState('')
+  const filteredPosts = posts.sort(
+    (a, b) => Number(new Date(b.frontMatter.date)) - Number(new Date(a.frontMatter.date))
+  ).filter(
+    (post) => post.frontMatter.title.toLowerCase().includes(searchValue.toLocaleLowerCase())
+  )
   return (
     <div className="flex flex-col max-w-3xl mx-auto bg-[#111111] h-screen">
         <Head>
@@ -20,7 +37,21 @@ export default function Blog( { posts }) {
         <Header />
         <main className="mx-4 mt-12 grow">
           <h1 className="mb-10 text-white text-4xl font-black"><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Blog</span> 📖</h1>
-          {posts.map((post, index) => (
+          
+          <InputGroup className="w-full mb-4">
+            <Input
+                className="w-full rounded py-1 px-2 shadow-sm shadow-pink-100"
+                aria-label="Search by title"
+                placeholder="Search by title"
+                onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <InputRightElement className="py-2 px-2">
+                <AiOutlineSearch />
+            </InputRightElement>
+          </InputGroup>
+          
+          {!filteredPosts.length && <span className= "text-white font-bold text-xl">No corresponding posts found ...</span>}
+          {filteredPosts.map((post, index) => (
             <Link href = {'/blog/' + post.slug}  passHref  key={index}>
 
               <div className="my-2 hover:scale-105 transition-all duration-300 cursor-pointer">

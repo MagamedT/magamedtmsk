@@ -10,7 +10,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import rehypeMathjax  from 'rehype-mathjax'
 import remarkMath from 'remark-math'
-
+import { parseISO, format } from 'date-fns'
 
 
 
@@ -31,8 +31,8 @@ export default function Post ({ frontMatter, mdxSource }) {
 
         <main className="mx-4 mt-12 grow" suppressHydrationWarning>
             <h1 className="mb-2 text-white text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">{frontMatter.title}</h1>
-            <h3 className="text-white text-base font-medium">{frontMatter.date}</h3>
-            <h3 className="text-[#807e80] text-sm font-light mb-20">last updated : {frontMatter.lastUpdated}</h3>
+            <h3 className="text-white text-base font-medium">{format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}</h3>
+            <h3 className="text-[#807e80] text-sm font-light mb-20">last updated : {format(parseISO(frontMatter.lastUpdated), 'MMMM dd, yyyy')}</h3>
 
             <div className="prose text-gray-300" suppressHydrationWarning>
                 <MDXRemote {...mdxSource} components = {MDXComponents} suppressHydrationWarning/>
