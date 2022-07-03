@@ -40,13 +40,19 @@ export default function Blog( { posts }) {
           
           <InputGroup className="w-full mb-4">
             <Input
-                className="w-full rounded py-1 px-2 shadow-sm shadow-pink-100"
+                className="w-full rounded-lg border-2 border-[#9234ea] py-1 px-2 bg-transparent text-white"
+
                 aria-label="Search by title"
                 placeholder="Search by title"
+                _placeholder={{ color: 'inherit' }}
+
+                focusBorderColor = 'pink.400'
+                errorBorderColor='pink.400'
+
                 onChange={(e) => setSearchValue(e.target.value)}
             />
             <InputRightElement className="py-2 px-2">
-                <AiOutlineSearch />
+                <AiOutlineSearch className="text-white" />
             </InputRightElement>
           </InputGroup>
           
