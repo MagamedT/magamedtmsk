@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import profilePic from '../public/profil.jpg'
+import profilePic from '../public/profil.png'
 
 function Hero() {
   return (
@@ -14,10 +14,10 @@ function Hero() {
     
         
         <Image
-         className="invisible rounded-full md:visible object-contain"
+         className="invisible rounded-b-full md:visible object-contain"
          src={profilePic}
          alt="Picture of the author"
-         width={300}
+         width={350}
          height={200}
          />
         
