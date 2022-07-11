@@ -10,8 +10,8 @@ function Footer() {
             <h3 className="menu-footer">Home</h3>
           </Link>
 
-          <Link href="/">
-            <h3 className="menu-footer">About</h3>
+          <Link href="/Blog">
+            <h3 className="menu-footer">Blog</h3>
           </Link>
 
           <Link href="/">
