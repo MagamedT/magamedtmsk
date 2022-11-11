@@ -10,12 +10,12 @@ export default function RecentPost({posts}) {
         <h1 className="text-white font-black text-4xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Recently publised</span></h1>
 
         <div className="flex flex-col items-center md:flex-row justify-center">
-          
+            <Card  texte ={"..."} link = "/"/>
             <Card texte ={posts[0].frontMatter.title} link = {'/blog/'+ posts[0].slug}/>
-        
-            <Card texte ={posts[1].frontMatter.title} link = {'/blog/'+ posts[1].slug}/>
+            <Card  texte ={"..."} link = "/"/>
+            {/* <Card texte ={posts[1].frontMatter.title} link = {'/blog/'+ posts[1].slug}/> */}
           
-            <Card texte ={posts[2].frontMatter.title} link = {'/blog/'+ posts[2].slug}/>
+            {/* <Card texte ={posts[2].frontMatter.title} link = {'/blog/'+ posts[2].slug}/> */}
           
         </div>
 
