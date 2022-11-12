@@ -8,7 +8,7 @@ function RecentProject() {
         <div className="flex flex-col items-center md:flex-row justify-center">
             {/* <Card  texte ={"Neural net repository"} link = "/"/> */}
             <Card  texte ={"..."} link = "/"/>
-            <Card  texte ={"C++ Fractal Raymarching (code refactoring for github)"} link = "/"/>
+            <Card  texte ={"C++ Fractal Ray marching (code refactoring for github)"} link = "/"/>
             <Card  texte ={"..."} link = "/"/>
         </div>
 
