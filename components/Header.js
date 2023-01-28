@@ -8,7 +8,7 @@ function Header() {
                 <Link href = "/"><li className="menu-item">Home</li></Link>
                 <Link href = "/Blog"><li className="menu-item">Blog</li></Link>
                 <Link href = "/Tags"><li className="menu-item">Tags</li></Link>
-                <Link href = "/CV"><li className="menu-item">CV</li></Link>
+                {/* <Link href = "/CV"><li className="menu-item">CV</li></Link> */}
                 <Link href = "/Contact"><li className="menu-item">Contact</li></Link>
             </ul>
         </div>

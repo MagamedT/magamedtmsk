@@ -30,8 +30,8 @@ const Home = ({ posts }) => {
       <main className="grow">
 
           <Hero />
-          <RecentPost posts = {posts}/>
-          <RecentProject />
+          {/* <RecentPost posts = {posts}/>
+          <RecentProject /> */}
           
       </main>
 
