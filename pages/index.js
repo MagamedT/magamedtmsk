@@ -11,6 +11,7 @@ import RecentProject from '../components/RecentProject'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import News from '../components/News'
 
 
 
@@ -32,6 +33,7 @@ const Home = ({ posts }) => {
           <Hero />
           {/* <RecentPost posts = {posts}/>
           <RecentProject /> */}
+          <News/>
           
       </main>
 
